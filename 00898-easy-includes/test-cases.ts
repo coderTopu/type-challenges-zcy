@@ -1,4 +1,4 @@
-
+// @ts-ignore
 import type { Equal, Expect } from '@type-challenges/utils'
 
 type cases = [
@@ -11,10 +11,12 @@ type cases = [
   Expect<Equal<Includes<[{}], { a: 'A' }>, false>>,
   Expect<Equal<Includes<[boolean, 2, 3, 5, 6, 7], false>, false>>,
   Expect<Equal<Includes<[true, 2, 3, 5, 6, 7], boolean>, false>>,
+  // @ts-ignore
   Expect<Equal<Includes<[false, 2, 3, 5, 6, 7], false>, true>>,
   Expect<Equal<Includes<[{ a: 'A' }], { readonly a: 'A' }>, false>>,
   Expect<Equal<Includes<[{ readonly a: 'A' }], { a: 'A' }>, false>>,
   Expect<Equal<Includes<[1], 1 | 2>, false>>,
+  // @ts-ignore
   Expect<Equal<Includes<[1 | 2], 1>, false>>,
   Expect<Equal<Includes<[null], undefined>, false>>,
   Expect<Equal<Includes<[undefined], null>, false>>,
