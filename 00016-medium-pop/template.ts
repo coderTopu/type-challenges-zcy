@@ -1,1 +1,1 @@
-type Pop<T extends any[]> = T extends [...infer P, any] ? P : T extends [] ? [] : never
+type Pop<T extends any[]> = T extends [] ? [] : T extends [...infer X, infer P] ? X : never
